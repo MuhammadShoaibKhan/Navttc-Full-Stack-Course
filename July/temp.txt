@@ -1,0 +1,15 @@
+   $("#btn_toyota").on("click",function(){        
+            alert("Toyota Available")
+            });
+
+        $("#btn_suzuki").on("click",function(){
+            alert("Suzuki Available")
+        });
+
+        $("#btn_harley").on("click",function(){
+            alert("Harley Davidson Available")
+        });
+
+        $("#btn_daihatsu").on("click",function(){
+            alert("Daihatsu Available")
+        });

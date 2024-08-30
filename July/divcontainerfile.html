@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Document</title>
+    <style>
+        img{
+            height: 300px;
+            width: 600px;
+        }
+
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-6">
+                <h1>Persian Cat</h1>
+                <img src = "https://static.vecteezy.com/system/resources/thumbnails/036/127/223/small/ai-generated-majestic-golden-persian-cat-with-amber-eyes-in-a-relaxed-pose-suitable-for-luxury-pet-branding-and-feline-health-content-photo.jpg" id="img01"/>
+                
+            </div>
+            <div class="col-6">
+
+                <h1>Turkish Angora Cat</h1>
+                <img src = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT87ehIEtTZQ_pj5JnvjqLzi7oG-jrrRw9n40coej4Hb0qmuQbv" id="img02"/>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#img01").click(function(){
+            alert("The Persian cat, also known as the Persian Longhair, is a long-haired breed of cat characterised by a round face and short muzzle. The first documented ancestors of Persian cats might have been imported into Italy from Khorasan as early as around 1620, however, this has not been proven. Instead, there is stronger evidence for a longhaired cat breed being exported from Afghanistan and Iran from the 19th century onwards.[2][3][4] Persian cats have been widely recognised by the North-West European cat fancy since the 19th century,[5] and after World War II by breeders from North America, Australia and New Zealand.[5] Some cat fancier organisations' breed standards subsume the Himalayan and Exotic Shorthair as variants of this breed, while others generally treat them as separate breeds.")
+        });
+
+        $("#img02").click(function(){
+            alert("The Turkish Angora (Turkish: Ankara kedisi, 'Ankara cat'[2]) is a breed of domestic cat. Turkish Angoras are one of the ancient, natural breeds of cat, having originated in central Anatolia (Ankara Province in modern-day Turkey). The breed has been documented as early as the 17th century. Outside of the United States, the breed is usually referred to as simply the Angora or Ankara cat.[2] These cats have slender and elegant bodies.")
+        });
+    </script>
+
+</body>
+
+</html>

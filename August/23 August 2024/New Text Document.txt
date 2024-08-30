@@ -1,0 +1,65 @@
+const User = require('../models/userModels.js')
+const createUSer = async (req, res) => {
+    const { name, email, contact } = req.body
+    console.log(name, email, contact);
+    const user = new User({
+        name: name,
+        email: email,
+        contact: contact
+    })
+    console.log(user);
+
+    try {
+        const createdUser = await user.save()
+        res.status(201).json({ user: createdUser })
+    } catch (err) {
+        res.status(500).json('user is not created')
+    }
+
+}
+const getUser = async (req, res) => {
+    try {
+        const users = await User.find({})
+        res.status(200).json(users)
+    } catch (err) {
+
+        res.status(500).json('users not found')
+    }
+
+}
+const editUser = async (req, res) => {
+    const id = req.params.id
+    const user = await User.findById({ _id: id })
+    const { name, email, contact } = req.body
+    if (user) {
+        try {
+            user.name = name || user.name
+            user.email = email || user.email
+            user.contact = contact || user.contact
+            const updatedUser = await user.save()
+            res.status(200).json({ user: updatedUser })
+        } catch (err) {
+
+            res.status(500).json(err)
+        }
+    }
+    else {
+        res.status(404).json({ messege: 'user is not updated' })
+    }
+
+}
+const deleteUser = async (req, res) => {
+    const id = req.params.id
+    const user = await User.findById({ _id: id })
+    if (user) {
+        try {
+            await User.deleteOne({ _id: id })
+            res.status(200).json('user is delted')
+        } catch (err) {
+
+            res.status(500).json('users not found')
+        }
+    }
+
+}
+export { createUSer, getUser, editUser, deleteUser}

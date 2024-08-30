@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Group ID</title>
+</head>
+
+<body>
+    <button type="button" class="btn btn-primary" id="btn-1">Primary</button>
+    <button type="button" class="btn btn-primary" id="btn-2">Primary2</button>
+    <button type="button" class="btn btn-primary" id="btn-3">Primary3</button>
+
+    <script>
+
+
+        $("#btn-1").on("click", function () {
+            // alert("daihatsu Param Function Working");
+            var1 ="Button 01 Alert";
+            print(var1);
+        });
+
+        $("#btn-2").on("click", function () {
+           var2 = "Button 02 Alert";
+           print(var2);
+        });
+
+        $("#btn-3").on("click", function () {
+            var3 = "Button 03 Alert";
+            print(var3);
+        });
+
+        function print(btnalert) {
+            alert(btnalert + " in Print Function");
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Categorial Document</title>
+
+    <style>
+        img{
+            height: 200px;
+            width: 200px;
+        }
+        button{
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Toyota</h2>
+        <img src="data:image/png;base64,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" id="toyota-pic"/>
+        <button id="btn_toyota_param"  >Toyota Param Button</button>
+    </div>
+
+    <div>
+        <h2>Suzuki</h2>
+        <img src="https://yt3.googleusercontent.com/R04vmPudk48uDLf0K5kWR8sIW5KgmZKq-KkXhj05N-hsgP608qnHLMGpSLNQw0GvdR3ni8D4=s900-c-k-c0x00ffffff-no-rj" id="suzuki-pic"/>
+        <button id="btn_suzuki_param" >Suzuki Param Button</button>
+    </div>
+
+</body>
+
+<script>
+  
+
+    $("#btn_toyota_param").on("click",function(){
+        // alert("daihatsu Param Function Working");
+        print("Toyota_Param");
+    });
+
+    $("#btn_suzuki_param").on("click",function(){
+            print("Suzuki_Param")
+        });
+
+    function print(car){
+        alert(car + " in Print Function");
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <title>IT-Form</title>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Survey form related to IT interest</h1>
+    
+    <div class="form-group">
+        <label for="name">Do you prefer python or JavaScript for Development?</label>
+        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Language Preference">
+    </div>
+
+    <div class="form-group">
+        <label for="backorfront">Do you prefer Backend or Frontend Development?</label>
+        <input type="text" class="form-control" id="backorfront" aria-describedby="emailHelp" placeholder="Area of Interest">
+    </div>
+
+    <div class="form-group">
+        <label for="backendlib">Which BackEnd Library do you prefer to use?</label>
+        <input type="text" class="form-control" id="backendlib" aria-describedby="emailHelp" placeholder="BackEnd library Name">
+    </div>
+
+    <div>
+        <button class="btn btn-primary" id="btn-save">Save</button>
+    </div>
+</body>
+
+<script>
+    $("#btn-save").on("click",function(){
+        var name = $("#name").val();
+        var backorfront = $("#backorfront").val();
+        var backendlib = $("#backendlib").val();
+
+        alert(name+' '+backorfront+' '+backendlib)
+    });
+</script>
+
+</html>

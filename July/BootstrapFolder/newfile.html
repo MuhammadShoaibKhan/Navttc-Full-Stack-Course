@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
+        <style>
+              div {
+  margin-left: 20px;
+  margin-right: 20px;
+            }
+        </style>
+
+
+    </head>    
+        <body>
+            <form>
+                <div class="form-group">
+                    <label> Name</label>
+                    <input type="text" id="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label> Course</label>
+                    <input type="text" id="course" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label> Passing Year</label>
+                    <input type="number" id="passingyear" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label> Enter your name</label>
+                    <input type="text" id="shoaib" class="form-control">
+                </div>
+                <button type="button" class="btn btn-primary" id="btn-save">Save</button>  
+                <button type="button" class="btn btn-danger" id="btn-cancel">Cancel</button>  
+                <button type="button" class="btn btn-primary" id="btn-shoaib">Shoaib-Button</button>  
+            </form>
+        </body>
+        <script>
+            $("#btn-save").on("click",function(){
+                var name=$("#name").val();
+                var course=$("#course").val();
+                var passingyear=$("#passingyear").val();
+                
+                print_details(name,course,passingyear,shoaib);
+                
+            });
+
+            $("#btn-shoaib").on("click",function(){
+                var shoaib=$("#shoaib").val();
+                print_shoaib(shoaib);
+            })
+            function print_details(name,course,passingyear){
+                alert(name+' '+course+' '+passingyear+' ');
+            }
+
+            function print_shoaib(shoaib){
+                alert(shoaib);
+            }
+        </script>
+    
+</html>

@@ -5,13 +5,14 @@ const userRoute = require('./routes/userRoute.js')
 const productRoute = require('./routes/productRoute.js')
 const bodyParser = require('body-parser')
 //const Product = require('./Models/userModel.js')
-const User = require('./Models/userModel.js')
+const Product = require('../Models/productModel.js')
+const User = require('../Models/userModel.js')
 app.use(bodyParser.urlencoded({extended:true}))
 
 
 
 
-mongoose.connect("mongodb+srv://shoaib:12345@cluster0.sr0rj.mongodb.net/").then(() => {
+mongoose.connect("mongodb+srv://shoaib:12345@cluster0.dwn91.mongodb.net/").then(() => {
 console.log("MongoDB Connected")
 })
 
@@ -104,4 +105,4 @@ console.log("MongoDB Connected")
 app.use('/users',userRoute)
 app.use('/product',productRoute)
 //Product Requests
-app.listen(5000);
+app.listen(4000);

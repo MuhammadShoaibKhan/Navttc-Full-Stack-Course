@@ -1,3 +1,4 @@
+// const Product = require('../Models/productModel.js')
 const User = require('../Models/userModel.js')
 
 const createUser = async(req,res) => {

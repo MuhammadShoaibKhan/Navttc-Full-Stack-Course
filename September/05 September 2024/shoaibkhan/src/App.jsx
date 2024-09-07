@@ -36,6 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/Form" element={<Form/>} />
+        <Route path="/Form/:id" element={<Form/>} />
         <Route path="/FriendList" element={<FriendList friends = {friends}/>} />
       </Routes>
       </BrowserRouter>

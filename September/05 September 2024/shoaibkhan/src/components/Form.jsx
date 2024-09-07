@@ -1,18 +1,20 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
+import FriendList from "./FriendList"
+import friends from "./FriendList"
 import {useParams} from "react-router-dom"
 import App from "../App"
 import home from "./Home"
 import {Link} from 'react-router-dom'
 
 
-const Form = () => {
+const Form = ({friends}) => {
 
-    const {id} = useParams()
-    const [name, setName] = useState("")
+    const params = useParams()
+    const [name, setName] = useState()
     const [age,setAge] = useState(0)
     const [friendliness, setFriendliness] = useState(0)
     const [toxicity, setToxicity] = useState(0)
-    const [loyalty, setLoyalty] = useState(0)
+    const [loyalty, setLoyalty] = useState()
 
 
 
@@ -70,10 +72,26 @@ const Form = () => {
 
     const resData = await res.json()
     console.log(resData)
+}
     useEffect(()=>{
-        
-    })
-    }
+
+
+        if(friends){
+            var dost = friends.find((friend)=>friend._id === params.id)
+            console.log(dost.name)
+        }     
+
+        if(dost){
+            setAge(dost.age)
+            setName(dost.name)
+            setFriendliness(dost.friendliness)
+            setLoyalty(dost.loyalty)
+            setToxicity(dost.toxicity)
+        }
+
+    },[params.id,friends]
+    )
+    
     return(
         <form onSubmit={handleSubmit}>
             <div>
@@ -82,7 +100,7 @@ const Form = () => {
             </div>
             <div>
                 <label htmlFor="age">Age</label>
-                <input type="range" value = {age} onChange={handleAgeChange} placeholder="Enter your friend age" min="0" max="10"/>
+                <input type="number" value = {age} onChange={handleAgeChange} placeholder="Enter your friend age"/>
             </div>
             <div>
                 <label htmlFor="friendliness">Friendliness</label>

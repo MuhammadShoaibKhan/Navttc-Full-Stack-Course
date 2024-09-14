@@ -1,0 +1,35 @@
+//put or post Fetch Api 
+                // we will  use our POST ftech api with submitHandler
+                // which will triggered on an onSubmit event in a form
+                const submitHandler = async(e) =>
+                    // it's prevevnting  the deafault reload
+                    e.preventDefault()
+                    // we  will define our req body
+                    const body ={
+                        // you desired fields
+                        // for example
+                        name: name
+                    }
+
+                    //initializing a varibles for storing the res
+                    // the fetch has 2 parms one is url and other is an eq object and here we
+
+                    const xyz = await fetch ('URL', {
+                        // are passing method:'POST' bcz we are calling a post api.
+                        method:'POST',
+                        // we are converting our body into  json bcz server expect json
+                        body: JSON.stringify(body),
+                        // we aer telling the that we are sending data is Json format
+                        headers:{
+                            "Content-type" : "application/json",
+                        },
+                    })
+                    //we are converting the initial res into json
+                    const abc =await xyz.json()
+                     //. now we can use the converted res as our will.
+
+
+                     // the POST wil be trrigered is res to onSubmit event
+                     //<form onSubmit = {handleSubmit}> Submit
+                     // form body 
+                     //</form>

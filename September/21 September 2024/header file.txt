@@ -1,0 +1,55 @@
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { LinkContainer } from 'react-router-bootstrap'
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
+import { Context } from '../App';
+import { useContext } from 'react';
+
+
+
+function Header() {
+  const navigate = useNavigate()
+  const [login,setLogin] = useContext(Context)
+  const handleLoginClick = () => {
+    navigate('/login');  
+  };
+  const handlesignupClick = () => {
+    navigate('/signup');  
+  };
+  const handlelogoutClick = () => {
+    setLogin(false)
+    navigate('/login');  
+  };
+
+  return (
+    <>
+      <Navbar bg="dark" data-bs-theme="dark" className='color-white'>
+        <Container>
+            <LinkContainer to="/">
+          <Navbar.Brand >friends Hub</Navbar.Brand>
+          </LinkContainer>
+          <Nav className="me-auto">
+            <LinkContainer  to='/friends'>
+            <Nav.Link>friend</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/forms">
+            <Nav.Link >form</Nav.Link>
+            </LinkContainer>
+           
+          </Nav>
+          {
+          login ? <>
+          <Button variant="light" onClick={handleLoginClick} className='mx-3'> Login</Button>
+          <Button variant="light" onClick={handlesignupClick} > signup </Button>
+          </>: <Button variant="light" onClick={handlelogoutClick} > Logout </Button>
+}
+        </Container>
+      </Navbar>
+     
+    </>
+  );
+}
+
+export default Header;

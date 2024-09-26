@@ -1,0 +1,49 @@
+    e.preventDefault(); // Prevent the default form submit behavior
+        console.log('submiting')
+        const payload = {
+            name: name,
+            age: age,
+            toxicity: toxicity,
+            loyalty: loyalty,
+            friendliness: friendliness,
+            friend: user._id
+        };
+    
+        try {
+            if (editState) {
+                console.log('Editing...');
+                const editRes = await fetch(`http://localhost:5000/friend/editfriend/${params.id}`, {
+                    method: 'PUT',
+                    body: JSON.stringify(payload),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                const editResData = await editRes.json();
+                console.log(editResData);
+                setAge('')
+                setName('')
+                setFriendliness(0)
+                setLoyalty(0)
+                setToxicity(0)
+            } else {
+                console.log('Creating...');
+                const createRes = await fetch('http://localhost:5000/friend/createfriend', {
+                    method: 'POST',
+                    body: JSON.stringify(payload),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                const createResData = await createRes.json();
+                console.log(createResData);
+                setAge('')
+                setName('')
+                setFriendliness(0)
+                setLoyalty(0)
+                setToxicity(0)
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
